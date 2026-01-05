@@ -52,7 +52,7 @@ metadata:
   name: nginx-service
 spec:
   type: NodePort
-  type: LoadBalancer
+#  type: LoadBalancer
   selector:
     app: nginx
   ports:
