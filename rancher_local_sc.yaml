@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: rancher-local
+provisioner: rancher.io/local-path
+parameters:
+# optional: path inside each node where PV directories will be created
+# if omitted, the provisioner uses its default (usually under /opt/local-path-provisioner or similar)
+  path: "/opt/rancher-local-path"
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
